@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/stepCountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Шагов: 0"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Расстояние: 0"
+        android:textSize="24sp"
+        android:layout_marginTop="26dp"/>
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сбросить счетчик"
+        android:layout_marginTop="26dp"/>
+
+    <Button
+        android:id="@+id/starsExerciseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Перейти к тренеровке"
+        android:layout_marginTop="26dp"/>
+
+</LinearLayout>
