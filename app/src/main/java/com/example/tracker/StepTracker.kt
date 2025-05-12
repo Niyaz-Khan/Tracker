@@ -1,5 +1,6 @@
 package com.example.tracker
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -25,7 +26,9 @@ class StepTrackerFragment : Fragment(), SensorEventListener {
 
     private lateinit var stepCountText: TextView
     private lateinit var resetButton: Button
+    private lateinit var startsExerciseButton: Button
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,6 +38,7 @@ class StepTrackerFragment : Fragment(), SensorEventListener {
 
         stepCountText = view.findViewById(R.id.stepCountText)
         resetButton = view.findViewById(R.id.resetButton)
+        startsExerciseButton = view.findViewById(R.id.startsExerciseButton)
 
         sensorManager = requireActivity().getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
@@ -51,7 +55,16 @@ class StepTrackerFragment : Fragment(), SensorEventListener {
             resetSteps()
         }
 
+        startsExerciseButton.setOnClickListener {
+            navigateToCardAndTracker()
+        }
+
         return view
+    }
+
+    private fun navigateToCardAndTracker() {
+        parentFragmentManager.beginTransaction().replace(R.id.main, CardAndTracker()
+        ).commit()
     }
 
     override fun onResume() {
